@@ -11,13 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <title>Project Demo</title>
+    <title>Availability Checker</title>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand">Form</a>
+            <a class="navbar-brand">Check Availability</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
@@ -26,63 +26,73 @@
     </nav>
     <div class="p-3">
         <h1 class="display-5 mb-4">When are you available?</h1>
-        <div class="row">
-            <label for="name" class="col-lg-2 col-md-3 col-sm-4 col-form-label">Name:</label>
-            <div class="col-lg-3 col-md-4 col-sm-5">
-                <input type="text" class="form-control" id="name">
-            </div>
-        </div>
-        <div class="py-4">
+        <form id="form">
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-4">
-                    <label>
-                        Available Time Slot:
-                    </label>
+                <label for="name" class="col-lg-2 col-md-3 col-sm-4 col-form-label">Name:</label>
+                <div class="col-lg-3 col-md-4 col-sm-5">
+                    <input type="text" class="form-control" id="name">
                 </div>
-                <div class="col-lg-6 col-md-5 col-sm-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkbox1">
-                        <label class="form-check-label" for="checkbox1">
-                            11:00-12:00
+            </div>
+            <div class="py-4">
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-4">
+                        <label>
+                            Available Time Slot:
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkbox2">
-                        <label class="form-check-label" for="checkbox2">
-                            12:00-13:00
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkbox3">
-                        <label class="form-check-label" for="checkbox3">
-                            14:00-15:00
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkbox4">
-                        <label class="form-check-label" for="checkbox4">
-                            15:00-16:00
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkbox5">
-                        <label class="form-check-label" for="checkbox5">
-                            16:00-17:00
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="checkbox6">
-                        <label class="form-check-label" for="checkbox6">
-                            17:00-18:00
-                        </label>
-                    </div>
-                    <div class="py-3">
-                        <button type="button" class="btn btn-dark">Submit</button>
+                    <div class="col-lg-6 col-md-5 col-sm-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="11:00-12:00" name="time_slot"
+                                id="checkbox1">
+                            <label class="form-check-label" for="checkbox1">
+                                11:00-12:00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="12:00-13:00" name="time_slot"
+                                id="checkbox2">
+                            <label class="form-check-label" for="checkbox2">
+                                12:00-13:00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="14:00-15:00" name="time_slot"
+                                id="checkbox3">
+                            <label class="form-check-label" for="checkbox3">
+                                14:00-15:00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="15:00-16:00" name="time_slot"
+                                id="checkbox4">
+                            <label class="form-check-label" for="checkbox4">
+                                15:00-16:00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="16:00-17:00" name="time_slot"
+                                id="checkbox5">
+                            <label class="form-check-label" for="checkbox5">
+                                16:00-17:00
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="17:00-18:00" name="time_slot"
+                                id="checkbox6">
+                            <label class="form-check-label" for="checkbox6">
+                                17:00-18:00
+                            </label>
+                        </div>
+                        <div class="py-3">
+                            <button type="submit" id="btnSubmit" class="btn btn-dark">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
+        <div id="table"></div>
     </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
