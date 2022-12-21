@@ -1,6 +1,6 @@
 const form = document.getElementById("form");
 const table = document.getElementById("table");
-const namesAndTimeSlots = {};
+//const namesAndTimeSlots = {};
 form.addEventListener("submit",
     function (event) {
         event.preventDefault();
@@ -11,30 +11,31 @@ form.addEventListener("submit",
             tempArray.push(timeSlot.value);
         }
         //TimeSlots.push(tempArray);
-        namesAndTimeSlots[name] = tempArray;
+        //namesAndTimeSlots[name] = tempArray;
 
-        for (var name in namesAndTimeSlots) {
-            console.log(name + " : " + namesAndTimeSlots[name]);
-        }
+        // for (var name in namesAndTimeSlots) {
+        //     console.log(name + " : " + namesAndTimeSlots[name]);
+        // }
 
         if (table.innerHTML === '') {
             //console.log("div is empty");
-            table.innerHTML += `<table class="table table-secondary table-striped">
-                                    <thead>
+            table.innerHTML += `<table class="table table-secondary table-striped"><thead>
                                     <tr>
                                         <th>Name</th>
                                         <th>Available Time Slot</th>
-                                    </tr>
-                                    </thead>`
+                                    </tr></thead>
+                                    <tbody>
+                                    </tbody>`
         }
         else {
-            table.innerHTML += `
-                                <tr>
-                                    <td>${name}</td>
-                                    <td>${namesAndTimeSlots[name]}</td>
-                                </tr>
-                                </table>`
-
+            var tbodyRef = table.getElementsByTagName('tbody')[0];
+            var newRow = tbodyRef.insertRow();
+            var nameCell = newRow.insertCell();
+            var timeCell = newRow.insertCell();
+            var nameText = document.createTextNode(name);
+            var timeText = document.createTextNode(tempArray);
+            nameCell.appendChild(nameText);
+            timeCell.appendChild(timeText);
         }
     })
 //---------------------------------------------------------------
